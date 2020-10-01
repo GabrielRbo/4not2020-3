@@ -43,7 +43,10 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await Turma.find() // Traz todos os cursos cadastrados
+        let dados = await Turma.find()
+        .populate('curso','nome') // Somente o atributo nome
+        .populate('professor')  // Todos os atributos
+        .populate('sala_aula','nome capacidade') // 
         res.send(dados) // Vai com status HTTP 200
     }
     catch(erro) {
