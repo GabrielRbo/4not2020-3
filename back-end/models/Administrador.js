@@ -5,7 +5,7 @@ const esquema = mongoose.Schema({
     cargo: { type: String, required: true},
     data_nascimento: {type: Date, required: true},
     // Índice único: impede a duplicidade de CPFs no cadastro
-    cpf: {type: String, required: true, index: {unique: true} },
+   
     rg: {type: String, required: true},
     valor_hora: {type: Number, required: true, min: 4.75, default: 4.75},
     endereco: {type: String, required: true},
