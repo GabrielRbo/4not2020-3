@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     //Descrever os dados do "curso" (Model)
-    nome: { type: String, required: true},
-    capacidade: { type: Number, default: 20},
-    recursos_didaticos: {type: String}
+    codigo: {type: Number, required: true},
+    quantidade_prensas: { type: Number, required: true},
+    capacidade: { type: Number, default: 1.000},
 })
 
 /* 
@@ -14,4 +14,4 @@ const esquema = mongoose.Schema({
     3º -> Nome da coleção (collection) em que os objetos criados a partir do
             modelo serão armazenados no MongoDB
 */
-module.exports = mongoose.model('SalaAula', esquema,'salas_aulas')
+module.exports = mongoose.model('GrupoPrensa', esquema,'grupo_prensas')
