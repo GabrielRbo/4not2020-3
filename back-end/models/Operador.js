@@ -36,4 +36,4 @@ const esquema = mongoose.Schema({
     telefone: {type: String, required: true},
 })
 
-module.exports = mongoose.model('Operador', esquema,'operador')
+module.exports = mongoose.model('Operador', esquema,'operadores')
