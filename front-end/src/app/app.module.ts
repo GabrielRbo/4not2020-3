@@ -3,28 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PrincipalComponent } from './ui/principal/principal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderBarComponent } from './ui/header-bar/header-bar.component';
 import { MaterialModule } from './material/material.module';
-import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
-import { MainFooterComponent } from './ui/main-footer/main-footer.component';
-import { MainMenuComponent } from './ui/main-menu/main-menu.component';
-import { HttpClientModule } from '@angular/common/http';
-import { GrupoPrensasComponent } from './prensas/grupo-prensa/grupo-prensas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainToolbarComponent,
-    MainFooterComponent,
-    MainMenuComponent,
-    GrupoPrensasComponent
+    PrincipalComponent,
+    HeaderBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
