@@ -26,7 +26,7 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     nome: { type: String, required: true },
-    funcao: { type: String, default: "Operador de Prensa"},
+    cargo: { type: String, default: "Operador de Prensa"},
     data_nascimento: {type: Date, required: true},
     // Índice único: impede a duplicidade de CPFs no cadastro
     cpf: {type: String, required: true, index: {unique: true} },
