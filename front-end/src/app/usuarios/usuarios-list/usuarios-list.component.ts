@@ -1,4 +1,4 @@
-import { AdministradorService } from './../administrador.service';
+import { UsuarioService } from '../usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,10 +15,10 @@ export class UsuariosListComponent implements OnInit {
     displayedColumns : string[] = ['nome','cargo','valor_hora','telefone']
 
 	//Injeção de depedência ou inversão de controle
-  constructor(private administradorSrv : AdministradorService) { }
+  constructor(private usuarioSrv : UsuarioService) { }
 
   async ngOnInit() {
-        this.usuarios = await this.administradorSrv.listar()
+        this.usuarios = await this.usuarioSrv.listar()
 		
   }
 

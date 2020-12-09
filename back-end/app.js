@@ -12,14 +12,14 @@ const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
 db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.vkppw.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
-var app = express();
+var app = express()
 
-const cors = require('cors')
+const cors = require('cors');
 
 //habilita a chamada do back-end apartir de um servidor distinto
 // é necessário instalar:
 // npm install cors --save
-app.use(cors())
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -36,14 +36,11 @@ app.use('/teste', teste)
 const solado = require('./routes/solado')
 app.use('/solado', solado)
 
-const operador = require('./routes/operador')
-app.use('/operador', operador)
-
 const grupo_prensa = require('./routes/grupo_prensa')
 app.use('/grupo_prensa', grupo_prensa)
 
-const administrador = require('./routes/administrador')
-app.use('/administrador', administrador)
+const usuario = require('./routes/usuario')
+app.use('/usuario', usuario)
 
 const info_prensa = require('./routes/info_prensa')
 app.use('/info_prensa', info_prensa)

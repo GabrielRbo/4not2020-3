@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AdministradorService {
+export class UsuarioService {
 
 	private apiServer = environment.apiServer
 
 	constructor(private http: HttpClient) { }
 
 	listar() {
-		return this.http.get(this.apiServer + 'administrador').toPromise()
+		return this.http.get(this.apiServer + 'usuario').toPromise()
 	}
 	
 }

@@ -10,7 +10,6 @@ import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosListComponent } from './usuarios/usuarios-list/usuarios-list.component';
-import { UsuariosList2 } from './usuarios/usuarios-list/usuarios-list2.component.ts/usuarios-list2.component.ts.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { UsuariosList2 } from './usuarios/usuarios-list/usuarios-list2.component
     MainToolbarComponent,
     MainFooterComponent,
     MainMenuComponent,
-    UsuariosListComponent,
-    UsuariosList2.Component.TsComponent
+    UsuariosListComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@
 
 // Controller é um conjunto de funções associadas às operações sobre dados
 
-const Administrador = require('../models/Administrador')
+const Usuario = require('../models/Usuario')
 
 const controller = {}   // Objeto vazio
 
@@ -29,7 +29,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia o BD para a criação de um novo objeto
     try {
-        await Administrador.create(req.body)
+        await Usuario.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -43,7 +43,7 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await Administrador.find()
+        let dados = await Usuario.find()
         res.send(dados) // Vai com status HTTP 200
     }
     catch(erro) {
@@ -59,7 +59,7 @@ controller.obterUm = async (req, res) => {
     try {
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await Administrador.findById(id)
+        let obj = await Usuario.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj) // HTTP 200
@@ -79,7 +79,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
 
         //Busca e substituição de conteúdo do objeto
-        let ret = await Administrador.findByIdAndUpdate(id, req.body)
+        let ret = await Usuario.findByIdAndUpdate(id, req.body)
 
         // Se encontrou e atualizou, retornarmos HTTP 204: No content
         if(ret) res.status(204).end()
@@ -100,7 +100,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
 
         // Busca pelo id e exclusão
-        let ret = await Administrador.findByIdAndDelete(id)
+        let ret = await Usuario.findByIdAndDelete(id)
 
         //Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()

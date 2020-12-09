@@ -4,8 +4,7 @@ import { UsuariosListComponent } from './usuarios/usuarios-list/usuarios-list.co
 
 const routes: Routes = [
     //Nomes de rota no angular(path) não começam com uma barra "/"
-    {path: 'administrador', component: UsuariosListComponent },
-    {path: 'operador', component: UsuariosListComponent}
+    {path: 'administrador', component: UsuariosListComponent }
 ];
 
 @NgModule({

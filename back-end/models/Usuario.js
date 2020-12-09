@@ -10,4 +10,4 @@ const esquema = mongoose.Schema({
     telefone: {type: String, required: true},
 })
 
-module.exports = mongoose.model('Administrador', esquema,'administradores')
+module.exports = mongoose.model('Usuario', esquema,'usuarios')
