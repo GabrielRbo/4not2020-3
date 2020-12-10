@@ -1,0 +1,36 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form">
+    <mat-form-field>
+        <mat-label>Nome do Usuário</mat-label>
+        <input matInput placeholder="Digite o nome do Usuário" 
+            [(ngModel)] = 'usuario.nome' required name="nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>RG do Usuário</mat-label>
+        <input matInput placeholder="Digite o número do RG" 
+            [(ngModel)] = 'usuario.rg' required name="rg">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <input matInput placeholder="Qual é o cargo ?" 
+            [(ngModel)] = 'usuario.cargo' required name="cargo">
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Valor Hora</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'usuario.valor_hora' required name="valor_hora">
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Telefone</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'usuario.telefone' required name="telefone">
+    </mat-form-field>
+
+
+
+</form>
