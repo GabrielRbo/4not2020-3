@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     //Descrever os dados do "curso" (Model)
     codigo: {type: Number, required: true},
-    quantidade_prensas: { type: Number, required: true},
+    códigos_prensas: { type: mongoose.ObjectId, ref: "InfoPrensa", required: true},
     capacidade: { type: Number, default: 1.000},
 })
 

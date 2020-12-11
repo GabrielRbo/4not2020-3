@@ -4,7 +4,7 @@ const esquema = mongoose.Schema({
     //Descrever os dados do "curso" (Model)
     cod_ref: {type: Number, required: true},
     referencia: { type: String, required: true},
-    tempo_producao: {type: String, required: true},
+    tempo_producao: {type: Number, required: true},
     formula: {type: String, required: true}
 
 })
