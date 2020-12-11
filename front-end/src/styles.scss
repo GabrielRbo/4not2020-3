@@ -56,3 +56,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         margin-right: 30px;
     }  
 }
+
+
+//ESTILIZAR FORM-BUTTONS
+.form-buttons {
+    background: transparent;
+
+    mat-toolbar-row {
+        display: flex;
+        justify-content: center;  
+        
+    }
+
+    button {
+        margin: 25px;
+    }
+}

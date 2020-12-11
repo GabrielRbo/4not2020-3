@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class InfoService {
 
 	private apiServer : string = environment.apiServer
 	//Criado para não ser necessário usar apiServer + '<Nome da Rota>'
-	private apiUri : string = this.apiServer + 'usuario'
+	private apiUri : string = this.apiServer + 'info_prensa'
 
 	constructor(private http: HttpClient) { }
 

@@ -2,11 +2,10 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     //Descrever os dados do "curso" (Model)
-    cod_ref: {type: Number, required: true},
+    cod_ref: {type: String, required: true},
     referencia: { type: String, required: true},
     tempo_producao: {type: Number, required: true},
     formula: {type: String, required: true}
-
 })
 
 /* 

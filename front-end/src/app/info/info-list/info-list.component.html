@@ -1,0 +1,65 @@
+
+<h1 style="text-align:center">Listagem de Prensas</h1>
+
+<mat-toolbar class="new-item">
+	<a mat-raised-button color="primary" [routerLink]="['/info/novo']">
+		<mat-icon>person_add</mat-icon>
+		Novo Usuário
+	</a>
+<table mat-table [dataSource]="infos" class="mat-elevation-z2">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Código Column -->
+  <ng-container matColumnDef="cod">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Código </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.cod}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="marca">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Modelo </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.marca}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="grupo_prensas">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Código do Grupo </th>
+    <!-- O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira -->
+    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.grupo_prensas?.codigo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="solado_prod">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Solado em Produção </th>
+    <!-- O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira -->
+    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.solado_prod}} </td>
+  </ng-container>
+
+	<!-- Editar Column -->
+		<ng-container matColumnDef="editar">
+			<th mat-header-cell class="cell-align-center" *matHeaderCellDef> Editar </th>
+
+			<td class="cell-align-center" mat-cell *matCellDef="let info">
+			<a mat-raised-button color="primary" title="Editar" 
+				[routerLink]="['/info', info._id]">
+				<mat-icon>edit</mat-icon>
+			</a>
+		
+			</td>
+	</ng-container>
+
+		<!-- Excluir Column -->
+		<ng-container matColumnDef="excluir">
+			<th mat-header-cell class="cell-align-center" *matHeaderCellDef> Excluir </th>
+			<td class="cell-align-center" mat-cell  *matCellDef="let info">
+
+			<button mat-raised-button color="warn" title="Excluir" (click)="excluir(info._id)">
+				<mat-icon>delete_forever</mat-icon>
+			</button>
+		
+			</td>
+	</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

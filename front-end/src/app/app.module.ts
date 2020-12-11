@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsuariosListComponent } from './usuarios/usuarios-list/usuarios-list.component';
 import { UsuarioFormComponent } from './usuarios/usuario-form/usuario-form.component';
 import { FormsModule } from '@angular/forms';
+import { InfoListComponent } from './info/info-list/info-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     MainFooterComponent,
     MainMenuComponent,
     UsuariosListComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    InfoListComponent,
   ],
   imports: [
     BrowserModule,
