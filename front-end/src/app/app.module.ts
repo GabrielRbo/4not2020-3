@@ -18,6 +18,7 @@ import { UsuariosListComponent } from './usuarios/usuarios-list/usuarios-list.co
 import { UsuarioFormComponent } from './usuarios/usuario-form/usuario-form.component';
 import { FormsModule } from '@angular/forms';
 import { InfoListComponent } from './info/info-list/info-list.component';
+import { InfoFormComponent } from './info/info-form/info-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { InfoListComponent } from './info/info-list/info-list.component';
     UsuariosListComponent,
     UsuarioFormComponent,
     InfoListComponent,
+    InfoFormComponent,
   ],
   imports: [
     BrowserModule,

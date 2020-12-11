@@ -1,0 +1,49 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)" >
+    <mat-form-field>
+        <mat-label>Marca da Prensa</mat-label>
+        <input matInput placeholder="Digite o nome da marca" 
+            [(ngModel)] = 'info.marca' required name="marca">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código de Cadastro no Sistema" 
+            [(ngModel)] = 'info.cod' required name="cod">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-select [(ngModel)]="info.cargo" name="cargo" required>
+          <mat-option *ngFor="let cargo of cargos" [value]="cargo.valor">
+            {{ cargo.valor}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Valor Hora</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'info.valor_hora' required name="valor_hora">
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Telefone</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'info.telefone' required name="telefone">
+    </mat-form-field>
+
+    <mat-toolbar class="form-buttons">
+      <mat-toolbar-row>
+        <button mat-raised-button type="submit" color="accent">
+          Salvar
+        </button>
+        <button mat-raised-button type="button" (click)="voltar(f)">
+          Voltar
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+</form>
