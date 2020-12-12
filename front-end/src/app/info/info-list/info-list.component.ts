@@ -13,7 +13,7 @@ export class InfoListComponent implements OnInit {
     infos : any = []
     
     // Quantas colunas serão exibidas na tabela e em qual ordem
-    displayedColumns : string[] = ['cod','marca','grupo_prensas','solado','editar','excluir']
+    displayedColumns : string[] = ['cod','marca','grupo_prensas','editar','excluir']
 
 	//Injeção de depedência ou inversão de controle
   constructor(

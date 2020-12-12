@@ -4,7 +4,7 @@
     <mat-form-field>
         <mat-label>Código do Grupo</mat-label>
         <input matInput placeholder="Digite o código do Grupo" 
-            [(ngModel)] = 'grupoPrensa.nome' required name="nome">
+            [(ngModel)] = 'grupoPrensa.codigo' required name="codigo">
     </mat-form-field>
 
     <mat-form-field>
@@ -14,7 +14,7 @@
     </mat-form-field>
     
     <mat-form-field>
-        <mat-select [(ngModel)]="grupoPrensa.solado_prod" placeholder="Solado" name="solado" required>
+        <mat-select [(ngModel)]="grupoPrensa.solado_prod" placeholder="Escolha o Solado" name="solado" required>
           <mat-option *ngFor="let solado of solados" [value]="solado._id">
             {{ solado.cod_ref}}
           </mat-option>

@@ -28,11 +28,11 @@
     <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.grupo_prensas?.codigo}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="solado">
+  <!--<ng-container matColumnDef="solado">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Solado em Produção </th>
-    <!-- O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira -->
-    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.grupo_prensas.solado.cod_ref}} </td>
-  </ng-container>
+    O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira
+    <td mat-cell class="cell-align-center" *matCellDef="let info"> {{info.grupo_prensas.solado}} </td>
+  </ng-container> -->
 
 	<!-- Editar Column -->
 		<ng-container matColumnDef="editar">

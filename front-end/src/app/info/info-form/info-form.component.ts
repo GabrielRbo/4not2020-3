@@ -18,12 +18,6 @@ export class InfoFormComponent implements OnInit {
 	// Variável para armazenar os dados do registro
 	info : any = {} // Objeto vazio, nome no SINGULAR
 
-
-  cargos : any = [
-    { valor: 'Gestor'},
-    { valor: 'Operador'}
-  ]
-
   title : string = 'Cadastro de Prensas' // Para quando for Editar Usuário haja uma destinção
   
   //Variavel para armazenar as listagens de objetos relacionados
