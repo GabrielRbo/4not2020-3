@@ -1,7 +1,19 @@
-<button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>menu</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
+
+<button mat-button [matMenuTriggerFor]="aboveMenu">Usuários</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
   <a mat-menu-item [routerLink] = "['/usuario']">Lista de Usuários</a>
-  <a mat-menu-item [routerLink] = "['/info']">Informações das Prensas</a>
+  <a mat-menu-item [routerLink] = "['/usuario/novo']">Cadastrar Novo Usuário</a>
 </mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Prensas</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <a mat-menu-item [routerLink] = "['/info']">Prensas Cadastradas</a>
+  <a mat-menu-item [routerLink] = "['/info/novo']">Cadastrar Nova Prensa</a>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Solados</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <a mat-menu-item [routerLink] = "['/solado']">Solados Cadastrados</a>
+  <a mat-menu-item [routerLink] = "['/solado/novo']">Cadastrar Novo Solado</a>
+</mat-menu>
+

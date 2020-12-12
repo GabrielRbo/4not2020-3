@@ -6,6 +6,7 @@ const esquema = mongoose.Schema({
     cod_ref: {type: String, required: true},
     referencia: { type: String, required: true},
     tempo_producao: {type: Number, required: true},
+    valor_par: {type: Number, required: true},
     formula: {type: String, required: true}
     /* 
     Parâmetros do método mongoose.model()

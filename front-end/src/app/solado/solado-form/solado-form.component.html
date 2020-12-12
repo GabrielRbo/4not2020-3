@@ -1,0 +1,47 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)" >
+    <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Digite o código da referência" 
+            [(ngModel)] = 'solado.cod_ref' required name="cod_ref">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Referência</mat-label>
+        <input matInput placeholder="Digite a referência"
+            [(ngModel)] = 'solado.referencia' required name="referencia">
+    </mat-form-field>
+    
+    <mat-form-field >
+        <mat-label>Tempo de Produção</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'solado.tempo_producao' required name="tempo_producao">
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Valor por Par</mat-label>
+        <input matInput type="number"
+            [(ngModel)] = 'solado.valor_par' required name="valor_par">
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Fórmula</mat-label>
+        <input matInput placeholder="Digite a formula"
+            [(ngModel)] = 'solado.formula' required name="formula">
+    </mat-form-field>
+
+    <mat-toolbar class="form-buttons">
+      <mat-toolbar-row>
+        <button mat-raised-button type="submit" color="accent">
+          Salvar
+        </button>
+        <button mat-raised-button type="button" (click)="voltar(f)">
+          Voltar
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+</form>

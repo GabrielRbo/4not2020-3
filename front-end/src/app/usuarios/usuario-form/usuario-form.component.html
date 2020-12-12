@@ -14,7 +14,7 @@
     </mat-form-field>
     
     <mat-form-field>
-        <mat-select [(ngModel)]="usuario.cargo" name="cargo" required>
+        <mat-select [(ngModel)]="usuario.cargo" placeholder="Função" name="cargo" required>
           <mat-option *ngFor="let cargo of cargos" [value]="cargo.valor">
             {{ cargo.valor}}
           </mat-option>

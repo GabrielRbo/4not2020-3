@@ -1,40 +1,24 @@
-import { UsuarioService } from './../../usuarios/usuario.service';
-import { GrupoPrensaService } from './../../grupo-prensa/grupo-prensa.service';
-import { SoladoService } from './../../solado/solado.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { InfoService } from './../info.service';
+import { SoladoService } from './../solado.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-info-form',
-  templateUrl: './info-form.component.html',
-  styleUrls: ['./info-form.component.scss']
+  selector: 'app-solado-form',
+  templateUrl: './solado-form.component.html',
+  styleUrls: ['./solado-form.component.scss']
 })
-export class InfoFormComponent implements OnInit {
+export class SoladoFormComponent implements OnInit {
 
 	// Variável para armazenar os dados do registro
-	info : any = {} // Objeto vazio, nome no SINGULAR
+	solado : any = {} // Objeto vazio, nome no SINGULAR
 
-
-  cargos : any = [
-    { valor: 'Gestor'},
-    { valor: 'Operador'}
-  ]
-
-  title : string = 'Cadastro de Prensas' // Para quando for Editar Usuário haja uma destinção
-  
-  //Variavel para armazenar as listagens de objetos relacionados
-  grupoPrensas : any = []
-  solados : any = []
+	title : string = 'Cadastro de Solados' // Para quando for Editar Usuário haja uma destinção
 
   constructor(
-    private infoSrv : InfoService,
     private soladoSrv : SoladoService,
-    private grupoPrensaSrv : GrupoPrensaService,
-    private usuarioSrv : UsuarioService,
     private snackBar : MatSnackBar,
     private location : Location,
     private atvRoute : ActivatedRoute
@@ -46,10 +30,10 @@ export class InfoFormComponent implements OnInit {
       //1) Acionar o back-end para buscar esse registro
       // e disponibiliza-lo para edição
       try {
-        this.info = await this.infoSrv.obterUm(this.atvRoute.snapshot.params['id'])
+        this.solado = await this.soladoSrv.obterUm(this.atvRoute.snapshot.params['id'])
 
         // 2) Muda titulo da pagina
-        this.title = 'Edição de Usuários'
+        this.title = 'Edição de Solados'
       }
       catch(erro){
         console.log(erro)
@@ -57,33 +41,19 @@ export class InfoFormComponent implements OnInit {
         
       }
     }
-    //Carregar as listas de dados entre as entidades relacionadas
-    this.carregarDados()
-  }
 
-  async carregarDados(){
-    try {
-      this.grupoPrensas = await this.grupoPrensaSrv.listar()
-      this.solados = await this.soladoSrv.listar()
-    }
-    catch(erro){
-      console.log(erro)
-      this.snackBar.open(`ERRO: Não foi possível carregar
-       todo os dados!!`,'OK!', { duration: 4200 })
-      
-    }
   }
 
   async salvar(form: NgForm) {
     if(form.valid) {
        try {
          //Se o curso já ecistir (caso de edição), ele terá o atributo _id
-         if(this.info._id) {
-           await this.infoSrv.atualizar(this.info) // Atualizando
+         if(this.solado._id) {
+           await this.soladoSrv.atualizar(this.solado) // Atualizando
          } 
          else {
           //1) Salvar os dados no back-end
-           await this.infoSrv.novo(this.info)
+           await this.soladoSrv.novo(this.solado)
          }
          
         //2) Dar o feedback para o usuário

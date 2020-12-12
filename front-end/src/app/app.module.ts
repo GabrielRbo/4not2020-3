@@ -19,6 +19,9 @@ import { UsuarioFormComponent } from './usuarios/usuario-form/usuario-form.compo
 import { FormsModule } from '@angular/forms';
 import { InfoListComponent } from './info/info-list/info-list.component';
 import { InfoFormComponent } from './info/info-form/info-form.component';
+import { SoladoListComponent } from './solado/solado-list/solado-list.component';
+import { SoladoFormComponent } from './solado/solado-form/solado-form.component';
+import { CardsComponent } from './ui/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { InfoFormComponent } from './info/info-form/info-form.component';
     UsuarioFormComponent,
     InfoListComponent,
     InfoFormComponent,
+    SoladoListComponent,
+    SoladoFormComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
