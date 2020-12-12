@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     //Descrever os dados do "curso" (Model)
     codigo: {type: Number, required: true},
-    capacidade: { type: Number, default: 1.000},
-    solado_prod: {type: mongoose.ObjectId, ref: 'Solado', required: true}
-
+    capacidade: { type: Number, required: true},
+    solado_prod: {type: mongoose.ObjectId, ref: 'Solado', required: true},
+    usuario: {type: mongoose.ObjectId, ref: 'Usuario', required: true}
 })
 
 /* 

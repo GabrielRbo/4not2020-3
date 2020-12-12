@@ -17,3 +17,9 @@
   <a mat-menu-item [routerLink] = "['/solado/novo']">Cadastrar Novo Solado</a>
 </mat-menu>
 
+<button mat-button [matMenuTriggerFor]="beforeMenu">Grupo de Prensas</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <a mat-menu-item [routerLink] = "['/solado']">Grupos Cadastrados</a>
+  <a mat-menu-item [routerLink] = "['/solado/novo']">Novo Cadastro de Grupos</a>
+</mat-menu>
+

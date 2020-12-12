@@ -1,22 +1,21 @@
 import { UsuarioService } from './../../usuarios/usuario.service';
-import { GrupoPrensaService } from '../../grupo-prensa/grupoPrensa.service';
 import { SoladoService } from './../../solado/solado.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { InfoService } from './../info.service';
+import { GrupoPrensaService } from './../grupoPrensa.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-info-form',
-  templateUrl: './info-form.component.html',
-  styleUrls: ['./info-form.component.scss']
+  selector: 'app-grupo-prensa-form',
+  templateUrl: './grupo-prensa-form.component.html',
+  styleUrls: ['./grupo-prensa-form.component.scss']
 })
-export class InfoFormComponent implements OnInit {
+export class GrupoPrensaFormComponent implements OnInit {
 
 	// Variável para armazenar os dados do registro
-	info : any = {} // Objeto vazio, nome no SINGULAR
+	grupoPrensa : any = {} // Objeto vazio, nome no SINGULAR
 
 
   cargos : any = [
@@ -24,16 +23,15 @@ export class InfoFormComponent implements OnInit {
     { valor: 'Operador'}
   ]
 
-  title : string = 'Cadastro de Prensas' // Para quando for Editar Usuário haja uma destinção
-  
-  //Variavel para armazenar as listagens de objetos relacionados
-  grupoPrensas : any = []
+  //Variaveis para armazenar os dados dos outros objetos
   solados : any = []
+  usuarios : any = []
+
+	title : string = 'Cadastro de Grupo' // Para quando for Editar Usuário haja uma destinção
 
   constructor(
-    private infoSrv : InfoService,
-    private soladoSrv : SoladoService,
     private grupoPrensaSrv : GrupoPrensaService,
+    private soladoSrv : SoladoService,
     private usuarioSrv : UsuarioService,
     private snackBar : MatSnackBar,
     private location : Location,
@@ -46,10 +44,10 @@ export class InfoFormComponent implements OnInit {
       //1) Acionar o back-end para buscar esse registro
       // e disponibiliza-lo para edição
       try {
-        this.info = await this.infoSrv.obterUm(this.atvRoute.snapshot.params['id'])
+        this.grupoPrensa = await this.grupoPrensaSrv.obterUm(this.atvRoute.snapshot.params['id'])
 
         // 2) Muda titulo da pagina
-        this.title = 'Edição de Usuários'
+        this.title = 'Edição de Grupo'
       }
       catch(erro){
         console.log(erro)
@@ -57,33 +55,19 @@ export class InfoFormComponent implements OnInit {
         
       }
     }
-    //Carregar as listas de dados entre as entidades relacionadas
-    this.carregarDados()
-  }
 
-  async carregarDados(){
-    try {
-      this.grupoPrensas = await this.grupoPrensaSrv.listar()
-      this.solados = await this.soladoSrv.listar()
-    }
-    catch(erro){
-      console.log(erro)
-      this.snackBar.open(`ERRO: Não foi possível carregar
-       todo os dados!!`,'OK!', { duration: 4200 })
-      
-    }
   }
 
   async salvar(form: NgForm) {
     if(form.valid) {
        try {
          //Se o curso já ecistir (caso de edição), ele terá o atributo _id
-         if(this.info._id) {
-           await this.infoSrv.atualizar(this.info) // Atualizando
+         if(this.grupoPrensa._id) {
+           await this.grupoPrensaSrv.atualizar(this.grupoPrensa) // Atualizando
          } 
          else {
           //1) Salvar os dados no back-end
-           await this.infoSrv.novo(this.info)
+           await this.grupoPrensaSrv.novo(this.grupoPrensa)
          }
          
         //2) Dar o feedback para o usuário
@@ -97,6 +81,20 @@ export class InfoFormComponent implements OnInit {
           
         }
     }
+    //Chama função para carregar dados
+    this.carregarDados()
+  }
+
+  async carregarDados() {
+      try {
+          this.solados = await this.soladoSrv.listar()
+          this.usuarios = await this.usuarioSrv.listar()
+      }
+      catch(erro) {
+        console.log(erro);
+        this.snackBar.open("Erro ao carregar os dados", 'OK!',{ duration: 4200 })
+        
+      }
   }
 
   voltar(form: NgForm) {

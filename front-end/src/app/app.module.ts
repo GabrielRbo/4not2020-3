@@ -1,3 +1,4 @@
+import { GrupoPrensaListComponent } from './grupo-prensa/grupo-prensa-list/grupo-prensa-list.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,9 @@ import { InfoFormComponent } from './info/info-form/info-form.component';
 import { SoladoListComponent } from './solado/solado-list/solado-list.component';
 import { SoladoFormComponent } from './solado/solado-form/solado-form.component';
 import { CardsComponent } from './ui/cards/cards.component';
+import { GrupoPrensaFormComponent } from './grupo-prensa/grupo-prensa-form/grupo-prensa-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import { CardsComponent } from './ui/cards/cards.component';
     InfoFormComponent,
     SoladoListComponent,
     SoladoFormComponent,
-    CardsComponent
+    CardsComponent,
+    GrupoPrensaFormComponent,
+    GrupoPrensaListComponent
   ],
   imports: [
     BrowserModule,

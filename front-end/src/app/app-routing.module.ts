@@ -1,3 +1,5 @@
+import { GrupoPrensaFormComponent } from './grupo-prensa/grupo-prensa-form/grupo-prensa-form.component';
+import { GrupoPrensaListComponent } from './grupo-prensa/grupo-prensa-list/grupo-prensa-list.component';
 import { CardsComponent } from './ui/cards/cards.component';
 import { SoladoFormComponent } from './solado/solado-form/solado-form.component';
 import { SoladoListComponent } from './solado/solado-list/solado-list.component';
@@ -23,7 +25,11 @@ const routes: Routes = [
 
     {path: 'solado', component: SoladoListComponent},
     {path: 'solado/novo', component: SoladoFormComponent},
-    {path: 'solado/:id', component: SoladoFormComponent}
+    {path: 'solado/:id', component: SoladoFormComponent},
+
+    {path: 'grupo-prensa', component: GrupoPrensaListComponent},
+    {path: 'grupo-prensa/novo', component: GrupoPrensaFormComponent},
+    {path: 'grupo-prensa/:id', component: GrupoPrensaFormComponent}
 
 
 ];
