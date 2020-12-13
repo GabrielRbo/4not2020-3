@@ -1,3 +1,4 @@
+import { GrupoPrensaService } from './../../grupo-prensa/grupoPrensa.service';
 import { InfoService } from '../info.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,11 +14,12 @@ export class InfoListComponent implements OnInit {
     infos : any = []
     
     // Quantas colunas serão exibidas na tabela e em qual ordem
-    displayedColumns : string[] = ['cod','marca','grupo_prensas','editar','excluir']
+    displayedColumns : string[] = ['cod','marca','grupo_prensas','dtCompra','editar','excluir']
 
 	//Injeção de depedência ou inversão de controle
   constructor(
       private infoSrv : InfoService,
+      private grupoPrensaSrv : GrupoPrensaService,
       private snackBar : MatSnackBar
       ) { }
 

@@ -43,7 +43,9 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await GrupoPrensa.find() // Traz todos os cursos cadastrados
+        let dados = await GrupoPrensa.find()
+          .populate('solado_prod')
+          .populate('usuario') // Traz todos os cursos cadastrados
         res.send(dados) // Vai com status HTTP 200
     }
     catch(erro) {

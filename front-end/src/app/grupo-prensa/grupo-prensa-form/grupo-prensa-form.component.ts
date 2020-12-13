@@ -17,12 +17,6 @@ export class GrupoPrensaFormComponent implements OnInit {
 	// Variável para armazenar os dados do registro
 	grupoPrensa : any = {} // Objeto vazio, nome no SINGULAR
 
-
-  cargos : any = [
-    { valor: 'Gestor'},
-    { valor: 'Operador'}
-  ]
-
   //Variaveis para armazenar os dados dos outros objetos
   solados : any = []
   usuarios : any = []
@@ -55,6 +49,8 @@ export class GrupoPrensaFormComponent implements OnInit {
         
       }
     }
+    //Chama função para carregar dados
+    this.carregarDados()
 
   }
 
@@ -81,8 +77,7 @@ export class GrupoPrensaFormComponent implements OnInit {
           
         }
     }
-    //Chama função para carregar dados
-    this.carregarDados()
+    
   }
 
   async carregarDados() {

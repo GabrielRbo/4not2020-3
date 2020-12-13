@@ -24,7 +24,7 @@
     <mat-form-field>
         <mat-select [(ngModel)]="grupoPrensa.usuario" placeholder="Informe o Encarregado" name="usuario" required>
           <mat-option *ngFor="let usuario of usuarios" [value]="usuario._id">
-            {{ usuario.nome }}
+            {{ usuario.nome }} ({{usuario.cargo}})
           </mat-option>
         </mat-select>
     </mat-form-field>

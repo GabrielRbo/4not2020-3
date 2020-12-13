@@ -1,11 +1,11 @@
 
 <h1 style="text-align:center">Listagem de Grupos De Prensas</h1>
 
-<mat-toolbar class="new-item">
+<!-- <mat-toolbar class="new-item">
 	<a mat-raised-button color="primary" [routerLink]="['/grupoPrensa/novo']">
 		<mat-icon>person_add</mat-icon>
 		Novo Usuário
-	</a>
+	</a> -->
 <table mat-table [dataSource]="grupoPrensas" class="mat-elevation-z2">
 
   <!--- Note that these columns can be defined in any order.
@@ -25,13 +25,13 @@
    <ng-container matColumnDef="solado_prod">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Solado em Produção </th>
     <!-- O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira -->
-    <td mat-cell class="cell-align-center" *matCellDef="let grupoPrensa"> {{grupoPrensa.solado_prod.cod_ref}} </td>
+    <td mat-cell class="cell-align-center" *matCellDef="let grupoPrensa"> {{grupoPrensa.solado_prod?.cod_ref}} </td>
   </ng-container>
 
   <ng-container matColumnDef="usuario">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Operador Encarregado</th>
     <!-- O ? - Caso não haja dados a serem exibidos ele não zoa a tabela inteira -->
-    <td mat-cell class="cell-align-center" *matCellDef="let grupoPrensa"> {{grupoPrensa.usuario}} </td>
+    <td mat-cell class="cell-align-center" *matCellDef="let grupoPrensa"> {{grupoPrensa.usuario?.nome}} </td>
   </ng-container>
 
 	<!-- Editar Column -->

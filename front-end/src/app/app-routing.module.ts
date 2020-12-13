@@ -27,9 +27,9 @@ const routes: Routes = [
     {path: 'solado/novo', component: SoladoFormComponent},
     {path: 'solado/:id', component: SoladoFormComponent},
 
-    {path: 'grupo-prensa', component: GrupoPrensaListComponent},
-    {path: 'grupo-prensa/novo', component: GrupoPrensaFormComponent},
-    {path: 'grupo-prensa/:id', component: GrupoPrensaFormComponent}
+    {path: 'grupoPrensa', component: GrupoPrensaListComponent},
+    {path: 'grupoPrensa/novo', component: GrupoPrensaFormComponent},
+    {path: 'grupoPrensa/:id', component: GrupoPrensaFormComponent}
 
 
 ];

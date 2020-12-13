@@ -15,7 +15,7 @@
 
     <mat-form-field>
           <mat-label>Grupo de Prensas</mat-label>
-          <mat-select [(ngModel)]="info.grupoPrensas" name="grupoPrensa" required>
+          <mat-select [(ngModel)]="info.grupo_prensas" name="grupoPrensa" required>
           <mat-option *ngFor="let grupoPrensa of grupoPrensas" [value]="grupoPrensa._id">
             {{ grupoPrensa.codigo }}
           </mat-option>
